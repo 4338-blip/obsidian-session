@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>예술 감상이 기록이 되는 시간</title>
+<meta name="description" content="《오윤》 전시를 함께 살펴보고, 감상 기록을 남겨봐요. 첫 번째 파일럿 세션 · 10월 3일(토) · 선착순 5명">
+<meta property="og:title" content="예술 감상이 기록이 되는 시간">
+<meta property="og:description" content="《오윤》 전시를 함께 살펴보고, 감상 기록을 남겨봐요. 10월 3일(토) · 선착순 5명">
+<meta property="og:type" content="website">
+<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap">
+</head>
+<body>
+<style>
+  :root {
+    --paper: #F1F1EC;
+    --paper-2: #E6E7E1;
+    --ink: #17181A;
+    --ink-soft: #4A4D52;
+    --ink-faint: #7D8189;
+    --line: #C9CBC4;
+    --indigo: #2E4B6B;
+    --indigo-soft: #DCE3EC;
+    --on-block: #1F2A36;
+    --block: #DCE3EA;
+    --btn: #2E4B6B;
+    --btn-text: #F7F7F3;
+    --display: "Gowun Batang", "AppleMyungjo", "Batang", serif;
+    --body: "Gowun Dodum", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    --mono: "Gowun Dodum", "Apple SD Gothic Neo", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper: #141619;
+      --paper-2: #1D2024;
+      --ink: #E8E7E1;
+      --ink-soft: #A9ACB1;
+    --ink-faint: #8A8F97;
+      --ink-faint: #8A8F97;
+      --line: #33373D;
+      --indigo: #9DB4D1;
+      --indigo-soft: #1F2A37;
+      --on-block: #E8E7E1;
+      --block: #243241;
+      --btn: #9DB4D1;
+      --btn-text: #141619;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper: #141619;
+    --paper-2: #1D2024;
+    --ink: #E8E7E1;
+    --ink-soft: #A9ACB1;
+    --line: #33373D;
+    --indigo: #9DB4D1;
+    --indigo-soft: #1F2A37;
+    --on-block: #E8E7E1;
+    --block: #243241;
+    --btn: #9DB4D1;
+    --btn-text: #141619;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 16px;
+    line-height: 1.75;
+    padding-inline: 20px;
+    padding-block: 32px 64px;
+    word-break: keep-all;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+
+  /* 목판 블록 같은 첫 화면 */
+  .hero {
+    background: var(--block);
+    color: var(--on-block);
+    padding: 36px 28px 30px;
+    position: relative;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .hero::after {
+    content: "";
+    position: absolute; inset: 8px;
+    border: 1.5px solid var(--on-block);
+    opacity: .35;
+    pointer-events: none;
+  }
+  .hero .eyebrow {
+    font-family: var(--mono);
+    font-size: 14px;
+    letter-spacing: .04em;
+    opacity: .8;
+  }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-size: clamp(38px, 9vw, 60px);
+    line-height: 1.15;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .hero p { margin: 0; font-size: 17px; max-width: 34em; }
+  .facts {
+    display: flex; flex-wrap: wrap; gap: 6px 18px;
+    font-size: 14px;
+    padding-top: 14px;
+    border-top: 1px solid color-mix(in srgb, var(--on-block) 35%, transparent);
+  }
+  .facts span { white-space: nowrap; }
+  .facts b { font-weight: 700; margin-right: 6px; }
+
+  .cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px;
+    font-family: var(--body); font-weight: 700; font-size: 16px;
+    padding: 14px 26px;
+    text-decoration: none;
+    border: 0; cursor: pointer;
+    align-self: flex-start;
+  }
+  .hero .cta { background: var(--btn); color: var(--btn-text); }
+  .cta:focus-visible { outline: 3px solid var(--indigo); outline-offset: 3px; }
+  .cta[aria-disabled="true"] { opacity: .55; cursor: default; }
+
+  section { display: flex; flex-direction: column; gap: 16px; }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.3;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .label {
+    font-family: var(--mono);
+    font-size: 14px;
+    letter-spacing: .02em;
+    color: var(--indigo);
+  }
+  p { margin: 0; }
+  .lead { font-size: 18px; line-height: 1.8; }
+  .muted { color: var(--ink-soft); }
+
+  .checks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .checks li {
+    padding: 12px 0 12px 30px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .checks li:first-child { border-top: 1px solid var(--line); }
+  .checks li::before {
+    content: "";
+    position: absolute; left: 4px; top: 21px;
+    width: 12px; height: 12px;
+    border: 2px solid var(--indigo);
+  }
+
+  .guide {
+    background: var(--paper-2);
+    padding: 24px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .guide h2 { font-size: 24px; }
+
+  .ext-link {
+    align-self: flex-start;
+    color: var(--indigo);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .copy-phone {
+    font: inherit; color: var(--indigo);
+    background: none; border: 0; padding: 0; cursor: pointer;
+    display: inline;
+  }
+  .copy-phone .copy-num { text-decoration: underline; text-underline-offset: 3px; }
+  .copy-phone:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+  .inline-link { color: var(--indigo); text-decoration: underline; text-underline-offset: 3px; }
+  .inline-link:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; }
+  .ext-link:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; }
+
+  .steps { list-style: none; margin: 0; padding: 0; counter-reset: s; display: flex; flex-direction: column; gap: 18px; }
+  .steps li { counter-increment: s; display: grid; grid-template-columns: 40px 1fr; gap: 12px; }
+  .steps li::before {
+    content: counter(s);
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 24px; line-height: 1.3;
+    color: var(--indigo);
+  }
+  .steps b { display: block; }
+
+  .not {
+    border: 1.5px dashed var(--line);
+    padding: 16px 20px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .not b { font-weight: 700; }
+  .not .not-note { font-size: 14px; color: var(--indigo); margin-top: 4px; }
+
+  .timeline { margin: 0; display: flex; flex-direction: column; }
+  .timeline div {
+    display: grid; grid-template-columns: 120px 1fr; gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .timeline div:first-child { border-top: 1px solid var(--line); }
+  .timeline dt { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 15px; color: var(--indigo); padding-top: 2px; }
+  .timeline dd { margin: 0; }
+
+  .info { margin: 0; display: grid; grid-template-columns: 116px 1fr; gap: 18px 16px; }
+  .info dt { font-weight: 700; }
+  .info dd { margin: 0; }
+  .info dd .muted {
+    display: block;
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-faint);
+  }
+
+  .end {
+    background: var(--block); color: var(--on-block);
+    padding: 28px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .end h2 { font-size: 26px; }
+  .end .cta { background: var(--btn); color: var(--btn-text); }
+  .end small { font-size: 13px; opacity: .8; }
+
+  @media (max-width: 480px) {
+    body { padding-inline: 16px; }
+    .hero { padding: 30px 22px 26px; }
+    .timeline div { grid-template-columns: 1fr; gap: 2px; }
+    .info { grid-template-columns: 1fr; gap: 2px; }
+    .info dd { margin-bottom: 12px; }
+    .cta { align-self: stretch; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">첫 번째 파일럿 세션<br>OBSIDIAN × 《오윤》 전시</div>
+    <h1>예술 감상이 기록이 되는 시간</h1>
+    <p>《오윤》 전시를 함께 살펴보고, 감상 기록을 남겨봐요.</p>
+    <div class="facts">
+      <span><b>일시</b>10월 3일(토) 10:20–13:30</span>
+      <span><b>장소</b>서울시립 미술아카이브 미술관</span>
+      <span><b>인원</b>선착순 5명</span>
+      <span><b>이동 및 식사비</b>35,000원</span>
+    </div>
+    <a class="cta js-apply" href="#">신청하기</a>
+  </header>
+
+  <section>
+    <div class="label">이런 적 있지 않나요</div>
+    <h2>전시 보러 가서 막막했던 적, 있지 않나요?</h2>
+    <p class="lead">미술관에 들어서면 어디부터 봐야 할지 모르겠고, 설명문만 읽다가 나오게 되고, 보고 나면 “좋긴 좋았는데… 왜 좋았지?” 싶은 순간들.</p>
+    <p>이 세션은 그런 분들을 위해 준비했어요. 미술관 에듀케이터와 함께 전시를 보는 방법을 가볍게 익히고, 나만의 언어로 감상을 기록해 봅니다.</p>
+  </section>
+
+  <section>
+    <div class="label">이런 분께 추천해요</div>
+    <ul class="checks">
+      <li>전시를 좋아하지만 어떻게 봐야 할지 늘 막막했던 분</li>
+      <li>전시를 보고 와도 무엇이 좋았는지 말로 잘 설명하지 못하는 분</li>
+      <li>감상을 사진 몇 장으로만 남기고 흘려보내서 아쉬웠던 분</li>
+      <li>옵시디언에 전시나 문화생활 기록을 쌓아 보고 싶은 분</li>
+    </ul>
+  </section>
+
+  <aside class="guide">
+    <div class="label">함께하는 사람</div>
+    <h2>에듀케이터인 제가 직접 들려드려요</h2>
+    <p>미술관과 관람객을 잇는 프로그램을 기획하고 운영해 온 에듀케이터로서, 직접 전시를 쉽고 재미있게 풀어 드려요.<br>작품과 기록물에 얽힌 이야기, 어디에 눈을 두면 좋을지도 함께 짚어 드릴게요.<br>미술 지식이 없어도 괜찮아요.</p>
+  </aside>
+
+  <section>
+    <div class="label">전시 소개</div>
+    <h2>《오윤》</h2>
+    <p>1980년대 민중미술을 대표하는 판화가 오윤(1946–1986)의 작고 40주기 전시입니다. 유족이 기증한 판화 원판, 습작, 드로잉, 노트, 메모, 여행일지 등 약 300점을 따라가며 작가의 창작 과정과 생각을 들여다봅니다.</p>
+    <a class="ext-link" href="https://sema.seoul.go.kr/kr/whatson/exhibition/detail?exNo=1576838" target="_blank" rel="noopener">서울시립미술관 전시 페이지에서 자세히 보기 ↗</a>
+  </section>
+
+  <section>
+    <div class="label">기록 도구 소개</div>
+    <h2>옵시디언(Obsidian)</h2>
+    <p>옵시디언은 메모와 메모를 링크로 이어 가며 쓰는 기록 앱이에요. 오늘 쓴 감상 노트를 예전에 적어 둔 생각이나 삶의 키워드와 연결해 두면, 한 번 보고 끝나는 감상이 아니라 계속 이어지는 나만의 기록이 될 수 있습니다.</p>
+    <a class="ext-link" href="https://obsidian.md" target="_blank" rel="noopener">옵시디언 공식 사이트 보기 ↗</a>
+  </section>
+
+  <section>
+    <div class="label">이날 해 볼 것</div>
+    <h2>보고, 잇고, 쓰고, 나눠요</h2>
+    <ol class="steps">
+      <li><div><b>작가의 기록 들여다보기</b>오윤이 평생 남긴 기록물을 보며, 무엇을 왜 기록했는지, 작가에게 기록은 어떤 의미였을지 함께 짐작해 봅니다.</div></li>
+      <li><div><b>나의 기록과 잇기</b>미리 생각해 온 ‘내 삶의 키워드’와 오늘 전시가 만나는 지점을 찾아봅니다. 나는 어떤 기록을 남기고 싶은지도요.</div></li>
+      <li><div><b>감상 노트 써보기</b>옵시디언(또는 평소 쓰는 기록 도구)에 나만의 감상 노트를 작성합니다.</div></li>
+      <li><div><b>이야기 나누기</b>점심을 먹으며 감상과 기록에 대한 이야기를 자유롭게 나눕니다.</div></li>
+    </ol>
+    <div class="not">
+      <b>이런 내용은 다루지 않아요</b>
+      <span>옵시디언 등 기록 도구의 설치 방법과 기본 사용법</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="label">일정 · 10월 3일(토, 개천절)</div>
+    <h2>이렇게 함께해요</h2>
+    <dl class="timeline">
+      <div><dt>10:20</dt><dd>경복궁역 3번 출구에서 함께 택시로 이동</dd></div>
+      <div><dt>10:40–11:10</dt><dd>에듀케이터와 함께 전시 감상</dd></div>
+      <div><dt>11:10–12:10</dt><dd>자유 관람 후 감상 노트 작성</dd></div>
+      <div><dt>12:10–13:30</dt><dd>식사하면서 자유롭게 대화</dd></div>
+      <div><dt>13:30</dt><dd>함께 택시로 경복궁역 이동 후 해산</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <div class="label">참여 안내</div>
+    <dl class="info">
+      <dt>만남 장소</dt>
+      <dd>경복궁역 3번 출구 앞</dd>
+      <dt>인원</dt>
+      <dd>선착순 5명</dd>
+      <dt>참여비</dt>
+      <dd>35,000원 (왕복 택시비 및 점심 식사비)</dd>
+      <dt>대상</dt>
+      <dd>옵시디언을 활용해 본 적 있으신 분<span class="muted">옵시디언을 쓰지 않는다면 블로그, 노션 등 평소 쓰는 기록 도구로 참여하셔도 괜찮아요.</span></dd>
+      <dt>준비물</dt>
+      <dd>완충한 노트북</dd>
+      <dt>미리 생각해 오기</dt>
+      <dd>내 삶의 키워드 한두 개<span class="muted">예: 자연, 여유, 확장, 가지다, 감각하다 등</span></dd>
+    </dl>
+  </section>
+
+  <section>
+    <div class="label">참고해 주세요</div>
+    <ul class="checks">
+      <li>이번 세션은 첫 파일럿 프로그램으로 열리는 자리예요. 편하게 즐기러 와 주세요!<br>다음 세션은 참여비가 조정될 수 있어요:)</li>
+      <li>문의사항이나 당일 연락은 편하게 남겨주세요.<br><span class="muted"><button type="button" class="copy-phone" id="copy-phone" aria-label="전화번호 복사하기"><span class="copy-num">010-6340-3179</span></button> · DM은 <a class="inline-link" href="https://www.instagram.com/joo.s_/" target="_blank" rel="noopener">@joo.s_</a></span></li>
+    </ul>
+  </section>
+
+  <footer class="end">
+    <h2>10월 3일, 미술관에서 만나요</h2>
+    <a class="cta js-apply" href="#">신청하기</a>
+    <small class="js-apply-note"></small>
+  </footer>
+
+</div>
+
+<script>
+  // 구글폼 신청 링크를 여기에 넣으면 버튼이 활성화됩니다.
+  const FORM_URL = 'https://docs.google.com/forms/d/1EU8D-fXeotU763Lvh3AH0fdopiykFNzMwnFF7aleROQ/viewform';
+  document.querySelectorAll('.js-apply').forEach(a => {
+    if (FORM_URL) {
+      a.href = FORM_URL;
+      a.target = '_blank';
+      a.rel = 'noopener';
+    } else {
+      a.setAttribute('aria-disabled', 'true');
+      a.textContent = '신청 링크 곧 열려요';
+      a.addEventListener('click', e => e.preventDefault());
+    }
+  });
+
+  // 전화번호 누르면 번호를 선택하고 복사
+  const copyBtn = document.getElementById('copy-phone');
+  if (copyBtn) {
+    const num = copyBtn.querySelector('.copy-num');
+    copyBtn.addEventListener('click', () => {
+      const r = document.createRange();
+      r.selectNodeContents(num);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(r);
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(num.textContent.trim()).catch(() => {});
+      }
+    });
+  }
+</script>
+</body>
+</html>
